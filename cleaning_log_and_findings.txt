@@ -1,0 +1,32 @@
+CLEANING LOG
+Raw shape: (1560, 9)
+Duplicate rows: 60
+Missing values per column (raw):
+customer_id           0
+age                  92
+city                 62
+employment           46
+annual_income       121
+credit_score         78
+loan_amount           0
+loan_term_months      0
+default               0
+
+[Duplicates] removed 60 rows
+[Invalid] ages outside 18-80 set to missing: 6
+[Outliers] annual_income: 63 values capped using IQR rule
+[Outliers] loan_amount: 73 values capped using IQR rule
+[Missing] age: 96 filled with median (38)
+[Missing] annual_income: 143 filled with median (528703)
+[Missing] credit_score: 75 filled with median (691)
+[Missing] city: 60 filled with mode (Hyderabad)
+[Missing] employment: 45 filled with mode (Salaried)
+
+Clean shape: (1500, 13)  | missing: 0 | duplicates: 0
+
+KEY FINDINGS
+- Overall default rate is 27.4%.
+- Default rate falls from 60.7% (score <600) to 10.3% (score 750+).
+- Highest-risk employment group: Student (39.7%); lowest: Salaried (25.2%).
+- Strongest correlate of default: loan_to_income (r = 0.43).
+- Defaulters' median loan-to-income is 0.97 vs 0.48 for non-defaulters.
